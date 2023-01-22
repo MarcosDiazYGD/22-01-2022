@@ -1,0 +1,407 @@
+/*  FONTS  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #21252b;
+  color: #fff;
+}
+
+/* ===== COMPONENT Screen Welcome ===== */
+.ScreenWelcome {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right top,
+    #fc244c,
+    #f83991,
+    #d762ca,
+    #a085ec,
+    #609df5,
+    #4ba0f3,
+    #31a2f1,
+    #00a4ed,
+    #0a98f3,
+    #3989f5,
+    #6078f1,
+    #8362e7
+  );
+}
+
+.ScreenWelcome h1 {
+  font-size: 100px;
+}
+
+.ScreenW--title-span {
+  background: #9bdc28;
+  background: linear-gradient(to top left, #9bdc28 45%, #fbc419 0%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ScreenW--button-logIn {
+  margin-top: 3.2rem;
+  border-radius: 50px;
+  width: 15rem;
+  height: 2rem;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  transition: color, background 0.3s ease;
+}
+
+.ScreenW--button-logIn:hover {
+  background: #fff;
+  color: gray;
+}
+
+.ScreenW--button-logIn:active {
+  background: silver;
+}
+
+/* ===== LogIn ===== */
+.loginOpen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  transition: bottom 250ms;
+  background: rgba(0, 0, 0, 0.381);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginClose {
+  position: fixed;
+  top: -100%;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  transition: bottom 250ms;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.381);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.form--logIn {
+  position: relative;
+  width: 30%;
+  margin: 2rem;
+  border-radius: 50px;
+  height: 80vh;
+  padding: 2rem;
+  background: #fff;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.fa-xmark {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  font-size: 20px;
+}
+
+.fa-xmark:hover {
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form--skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.form--logIn p {
+  margin-bottom: 5px;
+}
+
+.label {
+  width: 80%;
+}
+
+.input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: border-bottom 0.3s ease;
+}
+
+.input:focus {
+  border-bottom: 1px solid #31a2f1;
+}
+
+.input:focus ~ p {
+  color: #31a2f1;
+}
+
+.send-button {
+  width: 50%;
+  height: 30px;
+  background: #21252b;
+  border-radius: 50px;
+  color: #fff;
+  transition: background 0.3s ease;
+  border: transparent;
+}
+
+.send-button:hover {
+  background: #00a4ed;
+}
+
+.send-button:active {
+  background: silver;
+}
+
+.container--texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: upper 1s ease, spawn-box 1s ease;
+  animation-delay: 0s, 1s;
+  animation-fill-mode: forwards;
+  border: 7px solid transparent;
+  padding: 4rem;
+}
+
+@keyframes upper {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes spawn-box {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #fff;
+  }
+}
+
+.container-isInvalid > p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.isInvalid-span {
+  margin: 0;
+  color: #4ba0f3;
+}
+
+.container-errors {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+.pasword--visibility {
+  display: flex;
+  gap: 5px;
+}
+
+/* ===== MODAL ===== */
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  animation: apply-overlay ease 250ms, cancel-overlay ease 250ms;
+  animation-delay:0s, 2.75s ;
+  animation-fill-mode: forwards, forwards ;
+}
+
+@keyframes apply-overlay {
+  from {
+    background: transparent;
+  }to {
+  background: rgba(0, 0, 0, 0.418);
+  }
+}
+
+@keyframes cancel-overlay {
+  from {
+    background: rgba(0, 0, 0, 0.418);
+  }to {
+    background: transparent;
+  }
+}
+
+.container--modal {
+  position: absolute;
+  bottom: -20%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  animation: upping 250ms ease-in, downning 250ms ease-out;
+  animation-delay: 0s, 2.75s;
+  animation-fill-mode: forwards, forwards; 
+  border-radius: 100px;
+}
+
+.container--modal> p {
+  font-size: 22px;
+}
+
+@keyframes upping {
+  from {
+    bottom: -20%;
+  }
+  to {
+    bottom: 1rem;
+  }
+}
+
+@keyframes downning {
+  from {
+    bottom: 1rem;
+  }
+  to {
+    bottom: -20%;
+  }
+}
+
+.App {
+  position: relative;
+}
+
+.text-credits {
+  width: 100%;
+  position: fixed;
+  bottom: -10%;
+  text-align: center;
+  animation: upping 1s ease-in;
+  animation-fill-mode: forwards;
+  animation-delay:1.2s ;
+}
+
+.text-credits span {
+  font-weight: 700;
+
+}
+
+
+
+
+
+@media screen and (max-width: 1018px) {
+
+  .ScreenW--title-span {
+    position: relative;
+    top: -4rem;
+  }
+
+  .container--texts h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loginOpen {
+    justify-content: center;
+  }
+
+  .form--logIn {
+    width: 50%;
+  }
+
+  .fa-xmark {
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .container--texts h1{
+    font-size: 50px;
+  }
+  .ScreenW--title-span {
+    top: -1.7rem;
+  }
+}
+
+@media screen and (max-width:450px){
+
+  .container--texts {
+    padding: 2rem 1rem ;
+  }
+
+  .container--texts h1{
+    font-size:30px;
+  }
+
+  .container--texts p {
+    font-size:12px;
+  }
+  .ScreenW--title-span {
+    top: -1.3rem;
+  }
+
+  .ScreenW--button-logIn {
+    font-size: 12px;
+  }
+
+  .form--logIn {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  .form--logIn p {
+    font-size: 12px;
+  }
+
+  .send-button {
+    font-size: 12px;
+    height: 25px;
+  }
+
+}

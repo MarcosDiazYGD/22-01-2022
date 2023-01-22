@@ -1,0 +1,14 @@
+{
+  "validCredentials": {
+    "email": "german@milenium.group",
+    "password": "12345"
+  },
+  "responses": {
+    "success": {
+      "message": "Inicio de sesión exitoso"
+    },
+    "error": {
+      "message": "Inicio de sesión fallido"
+    }
+  }
+}
